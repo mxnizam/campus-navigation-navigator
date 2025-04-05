@@ -13,9 +13,9 @@ interface InfoCardProps {
 
 const InfoCard: React.FC<InfoCardProps> = ({ title, description, icon, onClick }) => {
   return (
-    <Card className="card-hover overflow-hidden bg-white hover:bg-gray-50">
+    <Card className="card-hover overflow-hidden bg-white border border-gray-100 shadow-sm group h-full">
       <CardHeader className="pb-2">
-        <div className="w-12 h-12 rounded-full bg-campus-100 flex items-center justify-center text-campus-600 mb-4">
+        <div className="feature-icon-container">
           {icon}
         </div>
         <CardTitle className="text-xl">{title}</CardTitle>
@@ -26,11 +26,11 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, description, icon, onClick }
       <CardFooter>
         <Button 
           variant="ghost" 
-          className="p-0 h-auto text-campus-600 hover:text-campus-800 hover:bg-transparent"
+          className="p-0 h-auto text-campus-600 hover:text-campus-800 hover:bg-transparent group-hover:translate-x-1 transition-transform"
           onClick={onClick}
         >
           <span className="mr-2">Learn more</span>
-          <ArrowRight size={16} />
+          <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
         </Button>
       </CardFooter>
     </Card>

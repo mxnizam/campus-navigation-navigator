@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -87,22 +87,58 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
 @layer components {
   .nav-link {
-    @apply px-4 py-2 text-sm font-medium transition-colors hover:text-primary;
+    @apply px-4 py-2 text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-transparent after:scale-x-0 after:transition-transform after:duration-300;
+  }
+  
+  .nav-link:hover {
+    @apply after:bg-primary after:scale-x-100;
   }
   
   .nav-link.active {
-    @apply text-primary font-semibold;
+    @apply text-primary font-semibold after:bg-primary after:scale-x-100;
   }
   
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
+
+  .hero-gradient {
+    @apply bg-gradient-to-br from-campus-600 via-campus-700 to-campus-800;
+  }
   
   .form-input {
     @apply h-10 px-3 py-2 rounded-md border border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl;
+  }
+
+  .feature-icon-container {
+    @apply w-14 h-14 rounded-xl bg-campus-100 flex items-center justify-center text-campus-600 mb-4 transition-all duration-300 group-hover:bg-campus-600 group-hover:text-white;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
 }
