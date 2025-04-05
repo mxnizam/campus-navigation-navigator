@@ -130,6 +130,60 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  /* New gradient styles */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-campus-600 to-campus-800;
+  }
+  
+  .bg-gradient-blue {
+    @apply bg-gradient-to-r from-blue-500 to-indigo-600;
+  }
+  
+  .bg-gradient-purple {
+    @apply bg-gradient-to-r from-purple-500 to-pink-500;
+  }
+  
+  .bg-gradient-green {
+    @apply bg-gradient-to-r from-green-400 to-teal-500;
+  }
+  
+  .bg-gradient-orange {
+    @apply bg-gradient-to-r from-orange-400 to-pink-500;
+  }
+  
+  .bg-gradient-sunset {
+    @apply bg-gradient-to-r from-orange-500 via-red-500 to-pink-500;
+  }
+  
+  .bg-gradient-ocean {
+    @apply bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600;
+  }
+  
+  .bg-gradient-meadow {
+    @apply bg-gradient-to-r from-green-300 via-emerald-400 to-teal-500;
+  }
+  
+  .bg-gradient-candy {
+    @apply bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400;
+  }
+  
+  .bg-gradient-campus {
+    @apply bg-gradient-to-r from-campus-500 to-campus-700;
+  }
+  
+  .hover-gradient-shine {
+    @apply relative overflow-hidden;
+  }
+  
+  .hover-gradient-shine::after {
+    @apply absolute inset-0 w-full h-full content-[''] bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full;
+    transition: transform 1s ease;
+  }
+  
+  .hover-gradient-shine:hover::after {
+    @apply translate-x-full;
+  }
+
   @keyframes float {
     0% {
       transform: translateY(0px);

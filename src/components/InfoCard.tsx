@@ -9,13 +9,14 @@ interface InfoCardProps {
   description: string;
   icon: React.ReactNode;
   onClick?: () => void;
+  gradientClass?: string;
 }
 
-const InfoCard: React.FC<InfoCardProps> = ({ title, description, icon, onClick }) => {
+const InfoCard: React.FC<InfoCardProps> = ({ title, description, icon, onClick, gradientClass = "bg-gradient-campus" }) => {
   return (
-    <Card className="card-hover overflow-hidden bg-white border border-gray-100 shadow-sm group h-full">
-      <CardHeader className="pb-2">
-        <div className="feature-icon-container">
+    <Card className="card-hover overflow-hidden bg-white border border-gray-100 shadow-sm group h-full hover-gradient-shine">
+      <CardHeader className={`pb-2 ${gradientClass} text-white`}>
+        <div className="feature-icon-container bg-white/20 text-white">
           {icon}
         </div>
         <CardTitle className="text-xl">{title}</CardTitle>

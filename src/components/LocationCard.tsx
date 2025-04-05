@@ -25,7 +25,7 @@ const LocationCard: React.FC<LocationCardProps> = ({ title, image, onClick }) =>
           <h3 className="text-white font-semibold text-lg">{title}</h3>
         </div>
       </div>
-      <CardContent className="p-4 bg-white">
+      <CardContent className="p-4 bg-gradient-to-r from-white to-gray-50">
         <p className="text-sm text-gray-600 flex items-center justify-between">
           <span>Click to view details</span>
           <span className="text-campus-600 text-xs font-medium">Details →</span>
