@@ -14,7 +14,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isBot }) => {
         "max-w-[80%] p-3 rounded-lg mb-3 animate-slide-in shadow-sm",
         isBot 
           ? "bg-white border border-gray-100 self-start rounded-tl-none" 
-          ? "bg-gradient-to-r from-campus-500 to-campus-600 text-white self-end rounded-tr-none"
+          : "bg-gradient-to-r from-campus-500 to-campus-600 text-white self-end rounded-tr-none"
       )}
     >
       <p className="text-sm">{message}</p>
